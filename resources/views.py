@@ -5,7 +5,7 @@ from .forms import *
 
 # Create your views here.
 
-@login_required
+# @login_required
 def all_subs(request):
 	resources = Resource.objects.filter(resource_by=request.user)
 	reminders = Reminder.objects.filter(reminder_by=request.user)
