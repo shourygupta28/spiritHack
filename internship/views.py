@@ -6,61 +6,31 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, UpdateView, DeleteView
-from .forms import InternshipForm, ApplicationForm
-from .models import Internship, InternshipApplication, VentureCapitalist
+from .forms import ProjectInternshipForm
+from .models import *
 import datetime, xlwt
 from django.db.models import Q
 from django.core.paginator import Paginator
 
 
-def Internships(request, pg=1):
-    internship = Internship.objects.all().order_by('-apply_by')
-
-    query = request.GET.get("query")
-    if query:
-        internship = internship.filter(
-            # Q(startup__icontains=query) |
-            Q(field_of_internship__icontains=query) |
-            Q(duration__icontains=query) |
-            Q(about=query) |
-            Q(location=query) |
-            Q(stipend=query) |
-            Q(skills_required=query) |
-            Q(perks=query) 
-            ).distinct()
-
-    paginator = Paginator(internship, 8)
-
+def InternshipProjects(request, pg=1):
+    internships = Project.objects.all().order_by('-apply_by')
     context = {
-        'Intern': paginator.page(pg),
-        'page': pg,
-      	'paginator': paginator,
-        'internships': paginator.page(pg)
+        'internships': internships
+    }
+    return render(request, 'internshipPortal/ProjectInternship.html', context)
+
+def Internships(request):
+    internships = StudentInternship.objects.all().order_by('-apply_by')
+    context = {
+        'internships': internships
     }
     return render(request, 'internshipPortal/Internship.html', context)
-
-def MyInternships(request):
-    pg = 1
-    if(request.user.is_authenticated and request.user.is_startup):
-        internships = Internship.objects.filter(startup=request.user.startup_profile).order_by('-apply_by')
-        context = {
-            'internships': internships,
-        }
-        return render(request, 'internshipPortal/MyInternshipStartup.html', context)
-    elif(request.user.is_authenticated and request.user.is_student):
-        internships = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
-        context = {
-            'internships': internships,
-        }
-        return render(request, 'internshipPortal/MyInternshipStudent.html', context)
-    else:
-        redirect(internships, pg=pg)
     
     
-
 def InternshipCreateView(request):
     pg = 1
-    form = InternshipForm(request.POST or None)
+    form = ProjectInternshipForm(request.POST or None)
     if request.user.is_authenticated and request.user.is_startup:
         if form.is_valid():
             form.instance.startup = request.user.startup_profile
@@ -77,7 +47,6 @@ def InternshipCreateView(request):
 
 
 def InternshipApplicationView(request, pk):
-    pg = 1
     internship = Internship.objects.filter(id=pk).first()
     applied_by = InternshipApplication.objects.filter(applied_by=request.user.student_profile)
     date = datetime.date.today()
@@ -129,13 +98,13 @@ def InternshipUpdateView(request, pk):
     pg = 1
     if request.user.is_authenticated and request.user.is_startup and (request.user.startup_profile == Internship.objects.filter(id=pk).first().startup):
         if request.method == 'POST':
-            form = InternshipForm(request.POST, instance=Internship.objects.filter(id=pk).first())
+            form = ProjectInternshipForm(request.POST, instance=Internship.objects.filter(id=pk).first())
             
             if form.is_valid():
                 form.save()
                 return redirect('internships', pg=pg)
 
-        form = InternshipForm(instance=Internship.objects.filter(id=pk).first())
+        form = ProjectInternshipForm(instance=Internship.objects.filter(id=pk).first())
         context = {
             'form': form
         }
