@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'booking',
+    'home',
+    'internship',
+    'resources',
+    'user.apps.UserConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -117,4 +123,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+
 STATIC_URL = '/static/'
+
+
+# LOGIN_URL = 'login'
+# LOGOUT_URL = 'logout'
+# LOGOUT_REDIRECT_URL = 'login'
+
+AUTH_USER_MODEL = "user.User"

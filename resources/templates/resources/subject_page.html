@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div>
+		<h1>
+			{{ subject.subject_name }} - {{ subject.subject_code }}
+		</h1>
+		<ol>
+			{% for reminder in reminders %}
+			<li>{{ reminder.title }} {{ reminder.description }} {{ reminder.Subject.subject_name }} ({{ reminder.Subject.subject_code }}) <a href="">EDIT REMINDER</a><a href="">DELETE REMINDER</a> </li>
+			{% endfor %}
+		</ol>
+	</div>
+
+	<div>
+		<h1>
+			Reminders
+		</h1>
+		<ol>
+			{% for resource in resources %}
+			<li>{{ resource.title }} {{ resource.description }}  {{ resource.Subject.subject_name }} ({{ resource.Subject.subject_code }}) <a href="">EDIT RESOURCE</a><a href="">DELETE REMINDER</a> </li>
+			{% endfor %}
+		</ol>
+	</div>
+
+	<h2>ADD REMINDER</h2>
+	<h2>ADD RESOURCE</h2>
+
+</body>
+</html>
