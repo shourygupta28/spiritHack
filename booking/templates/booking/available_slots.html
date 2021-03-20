@@ -9,7 +9,7 @@
 
 <ul>
 	{% for slot in slots %}
-	<li>{{ slot.teacher.name }}</li>
+	<li>{{ slot.teacher.name }} - {{ slot.date }} <a href="{% url '' %}">Select</a> </li>
 	{% endfor %}
 </ul>
 

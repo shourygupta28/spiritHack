@@ -30,3 +30,12 @@ def all_slots(request):
 	}
 
 	return render(request, 'booking/available_slots.html', context)
+
+def time_sel(request, pk):
+
+	slot = Slot.objects.get(id=pk)
+	time = slot.time
+	print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+	print(time.first())
+	print(slot)
+	print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
