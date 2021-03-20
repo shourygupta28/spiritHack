@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'home',
     'internship',
     'resources',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

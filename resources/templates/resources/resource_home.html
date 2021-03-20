@@ -5,24 +5,26 @@
 </head>
 <body>
 
-	<div>
-		<h1>
-			Reminders
-		</h1>
-		<ol>
-			{% for reminder in reminders %}
-			<li>{{ reminder.title }} {{ reminder.description }} {{ reminder.Subject.subject_name }} ({{ reminder.Subject.subject_code }}) <a href=""></a> </li>
-			{% endfor %}
-		</ol>
-	</div>
+	
 
 	<div>
 		<h1>
 			Reminders
 		</h1>
 		<ol>
+			{% for reminder in reminders %}
+			<li>{{ reminder.title }} {{ reminder.description }} {{ reminder.Subject.subject_name }} ({{ reminder.Subject.subject_code }}) <a href="">Delete</a> </li>
+			{% endfor %}
+		</ol>
+	</div>
+
+	<div>
+		<h1>
+			Resource
+		</h1>
+		<ol>
 			{% for resource in resources %}
-			<li>{{ resource.title }} {{ resource.description }}  {{ resource.Subject.subject_name }} ({{ resource.Subject.subject_code }}) <a href=""></a> </li>
+			<li>{{ resource.title }} {{ resource.description }}  {{ resource.Subject.subject_name }} ({{ resource.Subject.subject_code }}) <a href="">Delete</a> </li>
 			{% endfor %}
 		</ol>
 	</div>
@@ -37,6 +39,7 @@
 		</ol>
 	</div>
 
-	<h2><a href="{% url 'resources_add' %}">Adds</a></h2>
+	<h2><a href="{% url 'resources_add' %}">ADD RESOURSE</a></h2>
+	<h2><a href="{% url 'resources_add' %}">ADD REMINDER</a></h2>
 </body>
 </html>
