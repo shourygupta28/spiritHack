@@ -8,9 +8,6 @@ from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, UpdateView, DeleteView
 from .forms import ProjectInternshipForm, InternshipForm, ApplicationForm
 from .models import *
-import datetime, xlwt
-from django.db.models import Q
-from django.core.paginator import Paginator
 
 
 def InternshipProjects(request):
@@ -18,14 +15,14 @@ def InternshipProjects(request):
     context = {
         'internships': internships
     }
-    return render(request, 'internshipPortal/ProjectInternship.html', context)
+    return render(request, 'internship/ProjectInternship.html', context)
 
 def Internships(request):
-    internships = StudentInternship.objects.all().order_by('-apply_by')
+    internships = StudentInternship.objects.filter(visibility = True).order_by('-apply_by')
     context = {
         'internships': internships
     }
-    return render(request, 'internshipPortal/Internship.html', context)
+    return render(request, 'internship/Internship.html', context)
     
     
 def InternshipCreateView(request):
@@ -47,9 +44,9 @@ def InternshipCreateView(request):
 
     else:
         if request.user.is_student:
-            form = InternshipForm(request.POST, request.FILES)
+            form = InternshipForm()
         else:
-            form = ProjectInternshipForm(request.POST, request.FILES)
+            form = ProjectInternshipForm()
 
     context = {
         'form': form,
@@ -57,17 +54,17 @@ def InternshipCreateView(request):
 
     return render(request, 'internship/CreateInternship.html', context)
 
-def apply(request):
+def apply(request, pk):
     if request.method == 'POST':
         form = ApplicationForm(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.internship = Project.objects.get(id = pk)
+            form.instance.applied_by = request.user.student_profile
             form.save()
-            messages.success(
-                request, 'Done!')
             return HttpResponseRedirect(reverse('internships'))
 
     else:
-        form = ApplicationForm(request.POST, request.FILES)
+        form = ApplicationForm()
 
     context = {
         'form': form,
@@ -76,4 +73,26 @@ def apply(request):
     return render(request, 'internship/ApplyforInternship.html', context)
 
 
+def check_internship(request):
+    if request.user.is_superuser == True:
+        internships = StudentInternship.objects.filter(visibility = False)
+        context = {
+            'internships': internships
+        }
+        return render(request, 'internship/CheckInternshipVisibility.html', context)
+    else:
+        return render(request, 'internship/ProjectInternship.html', context)
+
+def accept(request, pk):
+    if request.user.is_superuser == True:
+        internship = StudentInternship.objects.get(id=pk)
+        internship.visibility = True
+        internship.save()
+        u = internship.user
+        c = u.Coins
+        c = c+10
+        u.Coins = c
+        u.save()
+    
+    return render(request, 'internship/CheckInternshipVisibility.html') 
 

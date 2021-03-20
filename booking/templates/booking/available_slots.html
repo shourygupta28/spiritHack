@@ -5,11 +5,23 @@
 </head>
 <body>
 
-<h1>ALL SLOTS</h1>
+<h1>ALL SLOTS - </h1>
 
 <ul>
 	{% for slot in slots %}
-	<li>{{ slot.teacher.name }}</li>
+	<li>
+		{{ slot.teacher.name }} - {{ slot.date }} 
+		<ol>
+			{% for time in slot.time.all %}
+
+
+			<li>{{ time.time }} <a href="{% url 'slots-book' slot.id time.id %}"> BOOK </a>
+			</li>
+
+			{% endfor %}
+		</ol>
+
+
 	{% endfor %}
 </ul>
 
