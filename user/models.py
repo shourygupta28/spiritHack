@@ -5,7 +5,7 @@ from django.contrib.auth.base_user import BaseUserManager
 
 class CustomUserManager(BaseUserManager):
     def create_superuser(self, email, password=None):
-        user = self.model(email=email, is_superuser=True)
+        user = self.model(email=email, is_staff=True, is_superuser=True)
         user.set_password(password)
         user.save()
         return user
