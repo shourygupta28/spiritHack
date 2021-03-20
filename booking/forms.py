@@ -12,3 +12,10 @@ class SlotForm(forms.ModelForm):
 	class Meta(forms.ModelForm):
 		model 		= Slot
 		fields 		= ['date', 'time']
+
+
+class bookedForm(forms.ModelForm):
+
+	class Meta(forms.ModelForm):
+		model 		= booked
+		fields 		= []
