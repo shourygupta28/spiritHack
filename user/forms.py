@@ -6,12 +6,13 @@ from .models import User
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
-class UserRegistrationForm(UserCreationForm):
-	name 				= forms.CharField(max_length=50)
-	contact_no 			= PhoneNumberField(help_text='Add country code before the contact no.')
-	email 				= forms.EmailField()
-	
-
+class StudentRegistrationForm(UserCreationForm):
 	class Meta(UserCreationForm.Meta):
 		model 		= User
 		fields 		= ['name','email','contact_no', 'yr_branch', 'password1','password2']
+
+
+class TeacherRegistrationForm(UserCreationForm):
+	class Meta(UserCreationForm.Meta):
+		model 		= User
+		fields 		= ['name','email','contact_no', 'password1','password2']
