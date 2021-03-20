@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import *
 from .forms import *
 
@@ -47,7 +48,7 @@ def create_reminder(request):
 def delete_resource(request, pk):
 	resource = Resource.objects.get(id=pk)
 	if(request.user == Resource.resource_by):
-		resources.delete()
+		resource.delete()
 	else:
 			messages.add_message(request, messages.INFO, 'You are not authorized to delete this feed.')
 
