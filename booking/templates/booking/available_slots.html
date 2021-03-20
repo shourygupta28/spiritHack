@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1>ALL SLOTS</h1>
+
+<ul>
+	{% for slot in slots %}
+	<li>{{ slot.teacher.name }}</li>
+	{% endfor %}
+</ul>
+
+</body>
+</html>
