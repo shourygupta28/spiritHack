@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
@@ -23,14 +23,26 @@ def create_resource(request):
 		form = ResourceForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.instance.resource_by = request.user
-			form.instance.resource_by = request.user
 			form.save()
-	
+		return redirect('resources')
 	form = ResourceForm()
 	context = {
 		'form' : form,
 	}
 	return render(request, 'resources/resource_form.html', context)
+
+def create_reminder(request):
+	if(request.method == 'POST'):
+		form = ReminderForm(request.POST)
+		if form.is_valid():
+			form.instance.reminder_by = request.user
+			form.save()
+		return redirect('resources')
+	form = ReminderForm()
+	context = {
+		'form' : form,
+	}
+	return render(request, 'resources/reminder_form.html', context)
 
 def delete_resource(request, pk):
 	resource = Resource.objects.get(id=pk)
