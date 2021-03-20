@@ -42,7 +42,7 @@ def create_reminder(request):
 	context = {
 		'form' : form,
 	}
-	return render(request, 'resources/resource_form.html', context)
+	return render(request, 'resources/reminder_form.html', context)
 
 def delete_resource(request, pk):
 	resource = Resource.objects.get(id=pk)
