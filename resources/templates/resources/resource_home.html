@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1>
+		Reminders
+	</h1>
+	<ol>
+		{% reminder in reminders %}
+		<li>{{ reminder.Subject.subject_name }} ({{ reminder.Subject.subject_code }}) </li>
+		{% endfor %}
+	</ol>
+
+</body>
+</html>
