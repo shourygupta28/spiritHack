@@ -6,11 +6,13 @@ from django.utils.safestring import mark_safe
 from phonenumber_field.modelfields import PhoneNumberField
 
 class StudentInternship(models.Model):
+    user = models.ForeignKey(User, limit_choices_to={'is_student': True}, on_delete=models.CASCADE, null=True)
     startup = models.CharField(max_length=100, default='')
     duration = models.CharField(max_length=20)
     stipend = models.CharField(max_length=100)
     apply_by = models.DateField(default='2000-01-01', help_text='YYYY-MM-DD Format should be followed for the date.')
     link = models.URLField(default='', help_text='Add link for application. ')
+    visibility = models.BooleanField(default=False)
 
 
     def __str__(self):
