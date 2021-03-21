@@ -40,7 +40,7 @@ def InternshipCreateView(request):
                 messages.success(
                     request, 'Done!')
 
-        return HttpResponseRedirect(reverse('internships'))
+        return redirect('project-internships')
 
     else:
         if request.user.is_student:
@@ -59,9 +59,9 @@ def apply(request, pk):
         form = ApplicationForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.internship = Project.objects.get(id = pk)
-            form.instance.applied_by = request.user.student_profile
+            form.instance.applied_by = request.user
             form.save()
-            return HttpResponseRedirect(reverse('internships'))
+            return redirect('project-internships')
 
     else:
         form = ApplicationForm()
