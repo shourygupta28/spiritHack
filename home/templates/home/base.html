@@ -99,6 +99,7 @@
             {% else %}
             <li class="dropdown"><a>Hi {{user.name}}</a></a>
               <ul>
+                <li><a href="#">{{user.Coins}}</a></li>
                 <li><a href="{%url 'logout'%}">Logout</a></li>
               </ul>
             </li>
