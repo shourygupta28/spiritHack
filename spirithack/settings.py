@@ -143,7 +143,7 @@ MAILER_EMAIL_BACKEND = EMAIL_BACKEND
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'queries.edctiet@gmail.com'
-EMAIL_HOST_PASSWORD = 'eczqtysruacoqqob'
-DEFAULT_FROM_EMAIL = 'pitchers@edctiet.com'
+EMAIL_HOST_USER = 'reminder@tech-mint.com'
+EMAIL_HOST_PASSWORD = 'test'
+DEFAULT_FROM_EMAIL = 'reminder@tech-mint.com'
 
