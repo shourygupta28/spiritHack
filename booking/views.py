@@ -24,44 +24,17 @@ def create_slot(request):
 
 def all_slots(request, pk=None, id=None):
 
-	slots = Slot.objects.all()
+	slots = Slot.objects.exclude(time=None)
 	if id:
 		slot = Slot.objects.get(id=pk)
 		time_slot = Time.objects.get(id=id)
-		timeName = time_slot.time
-		print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-		print(timeName)
-		print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-		form = SlotForm()
-		form.instance.stundent = request.user
-		form.instance.teacher = slot.teacher
-		form.instance.time.set(time_slot.first())
-		form.instance.date = slot.date
-		form.save()
-	
+		obj = booked.objects.create(student=request.user, teacher=slot.teacher, time=time_slot, date=slot.date, description='')
+		obj.save()
+
+		slot.time.remove(time_slot)
+
 	context = {
 		'slots' : slots,
 	}
 
 	return render(request, 'booking/available_slots.html', context)
-
-# def time_sel(request, pk):
-
-# 	slot = Slot.objects.get(id=pk)
-# 	times = slot.time
-# 	if(request.method == 'POST'):
-# 		form = SlotForm(request.POST)
-# 		if form.is_valid():
-# 			form.instance.stundent = request.user
-# 			form.instance.teacher = slot.teacher
-# 			form.instance.time = time.time
-# 			form.instance.date = slot.date
-
-# 			form.save()
-# 			return redirect('slots')
-
-# 	context = {
-# 		'times' : times,
-# 		'slot' : slot,
-# 	}
-# 	return render(request, 'booking/available_time.html', context)
