@@ -444,6 +444,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+
 #hero h2 {
   color: #fff;
   margin-bottom: 20px;
@@ -1497,6 +1498,9 @@ section {
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
+.container{
+  display: grid;
+}
 .blog {
   padding: 40px 0 20px 0;
 }

@@ -22,6 +22,7 @@ class User(AbstractUser):
     alert               = models.CharField(max_length=100, default='', null=True, blank=True)
     is_teacher          = models.BooleanField(default=False)
     is_student          = models.BooleanField(default=False)
+    is_company          = models.BooleanField(default=False)
     yr_branch           = models.ForeignKey(YrBranch, on_delete=models.PROTECT, null=True)
 
     USERNAME_FIELD      = 'email'

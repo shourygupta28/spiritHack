@@ -18,6 +18,6 @@ class Slot(models.Model):
 class booked(models.Model):
 	student				= models.ForeignKey(User, limit_choices_to={'is_student': True}, related_name="student", on_delete=models.CASCADE, null=False)
 	teacher				= models.ForeignKey(User, limit_choices_to={'is_teacher': True}, related_name="book_teacher", on_delete=models.CASCADE, null=False)
-	time 				= models.ForeignKey(Time, on_delete=models.CASCADE, null=False, related_name="booked_time")
+	time 				= models.ForeignKey(Time, on_delete=models.CASCADE, null=True, related_name="booked_time")
 	date 				= models.DateField()
 	description 		= models.CharField(max_length=500)
