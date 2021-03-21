@@ -4,22 +4,128 @@
   <meta charset="UTF-8">
   <title>CreateInternship</title>
 
-  <link rel="stylesheet" href="assets/css/style5.css">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
   
 
 </head>
 <body>
-	  
+	    <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Student Portal</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="blog.html">Internships</a></li>
+              <li><a href="team.html">Academics</a></li>
+              <li><a href="testimonials.html">Finances</a></li>
+
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Internships</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+
+            <li class="dropdown"><a href="#" class="getstarted">Login</a></a>
+                <ul>
+                  <li><a href="registerstudent.html">As a Student</a></li>
+                  <li><a href="registerteacher.html">As a Teacher</a></li>
+                  <li><a href="registercompany.html">As Company</a></li>
+                </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Create Internships</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Internship</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+ <section id="contact" class="contact">
+      <div class="container" style="padding-top: 30px;">
+
+  		<div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Internship Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Domain" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Duration" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Stipend" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Details" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Internship has been created. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Create Internship</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
 <!-- partial:index.partial.html -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
 <div class="container">
   <div class="frame">
     <div class="nav">
       <ul class"links">
-       <li class="signin-active"><a href="#">Internship Details</a></li>
+       <li class="signin-active"><a href="#">Internship Details</a></li>-->
         <!--<li class="signup-inactive"><a class="btn">Sign up </a></li>-->
-      </ul>
+      <!--</ul>
     </div>
     <div ng-app ng-init="checked = false">
 				        <form class="form-signin" action="" method="post" name="form">
@@ -33,7 +139,7 @@
           <input class="form-styling" type="text" name="confirmpassword" placeholder=""/>
           <a ng-click="checked = !checked" class="btn-signup" href="{% url 'post-internship' internship.id %}">Create Internship</a>
           </div>-->
-				        </form>
+				        <!--</form>
       
             <div  class="success">
               <svg width="270" height="270" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -45,12 +151,12 @@
                    <p> Thanks for creating internship! Check your email for confirmation.</p>
                 </div>
              </div>
-      </div>
+      </div>-->
       
      <!-- <div class="forgot">
         <a href="#">Forgot your password?</a>
       </div>-->
-  <a id="refresh" value="Refresh" onClick="history.go()">
+ <!-- <a id="refresh" value="Refresh" onClick="history.go()">
     <svg class="refreshicon"   version="1.1" id="Capa_1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          width="25px" height="25px" viewBox="0 0 322.447 322.447" style="enable-background:new 0 0 322.447 322.447;"
          xml:space="preserve">
@@ -62,10 +168,10 @@
                 l45.369-14.738C320.371,243.946,323.965,236.895,321.832,230.327z"/>
     </svg>
   </a>
-</div>
+</div>-->
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script><script  src="./script.js"></script>
+  <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script><script  src="./script.js"></script>-->
 
 </body>
 </html>
