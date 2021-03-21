@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'resources',
     'user.apps.UserConfig',
     'crispy_forms',
+    'coupons',
 ]
 
 MIDDLEWARE = [
