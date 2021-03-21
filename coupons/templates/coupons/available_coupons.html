@@ -218,33 +218,61 @@
     </style>
 {% endblock head %}
 {% block body %}
+<!-- ======= Breadcrumbs ======= -->
+     <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container" style="padding-top: 2px;">
+
+        <div class="d-flex justify-content-between align-items-center" style="padding-top: 2px;">
+          <h2>Available Coupons</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Coupons</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!--End Breadcrumbs -->
 <section id="storables" class="overview-block-ptb grey-bg">
   <div class="container">
-    <div class="row">
+  <!--  <div class="row">
       <div class="col-sm-12">
         <div class="heading-title">
                   <h1 class="title iq-tw-7" style="margin-top: 50px; margin-bottom: 70px; text-align: center;"><b>Available Coupons</b></h1>
                   <p></p>
         </div>
       </div>
-    </div>
-      <div class="row">
+    </div>-->
+    <section id="blog" class="blog" style="align-self: center;">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+
 
 		{% for coupon in coupons %}
-      <div class="col-sm-4 col-lg-4 col-md-4 r-mt-30">
-        <div class="iq-fancy-box text-center">
-            <!-- <div class="iq-icon" style="width: 180px; height: 180px;">
-                <img src="images/services/st1.png" class="img-fluid" alt="#">
-            </div> -->
-            <div class="fancy-content">
-                <h5 class="iq-tw-6 iq-pt-20 iq-pb-10"><b>{{ coupon.company.name }}</b></h5><br><br>
-                <p>{{ coupon.description }}</p>
-                <p>Cost : {{ coupon.cost }}</p>
+      <div class="col-lg-4 entries">
 
-            </div>
-            <div style="display: flex; justify-content: center;">
+            <article class="entry">
+    
+            <h2 class="entry-title" style="display: flex; justify-content: center;">
+                <a href="blog-single.html">{{ coupon.company.name }}</a>
+              </h2>
+           
+                <p style="display: flex; justify-content: center;">{{ coupon.description }}</p>
+                <p style="display: flex; justify-content: center;">Cost : {{ coupon.cost }}</p>
+                <div style="display: flex; justify-content: center;">
                 <a class="more_btn" href="{% url 'available' coupon.id %}" data-toggle="modal" data-target="#exampleModalCenter4" style="color: white !important;">Buy
                     Now</a></div>
+            </div>
+            </article>
+            {% endfor %}
+        </div>
+
+    </div>
+    
+</div>
+
+</section>
+
+{% endblock body %}
             <!-- <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="iq-pricing text-center">
@@ -267,8 +295,8 @@
                     <!-- </div>
                 </div>
             </div> -->
-        </div>
-      </div>
+       <!-- </div>
+      </div>-->
           <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="fas fa-store"></i></div>
@@ -278,7 +306,6 @@
               <p class="description" style="border-style: solid; border-width: thin; margin-top: 25px;"><a class="description" href = "{% url 'available' coupon.id %}">Buy</a></p>
             </div>
           </div> -->
-    {% endfor %}
-  </div>
+  <!--</div>
 </section>
-{% endblock body %}
+-->
