@@ -63,28 +63,28 @@
           </li>
           <li class="dropdown"><a href="#"><span>Internship</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{% url 'resources' %}">Projects</a></li>
-              <li><a href="{% url 'resources_add' %}">Internships</a></li>
-              <li><a href="{% url 'reminder_add' %}">Post Internship Opportunity</a></li>
+              <li><a href="{% url 'project-internships' %}">Projects</a></li>
+              <li><a href="{% url 'internship-opportunity' %}">Internships</a></li>
+              <li><a href="{% url 'post-internship' %}">Post Internship Opportunity</a></li>
             </ul>
           </li>
           {% if user.is_student %}
-          <li><a href="#"><span>Book an Appointment</span> </a>
+          <li><a href="{% url 'slots' %}"><span>Book an Appointment</span> </a>
             
           </li>
           {% endif %}
           {% if user.is_teacher %}
-          <li><a href="#"><span>Post Free Slots</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="{% url 'slot_add' %}"><span>Post Free Slots</span> <i class="bi bi-chevron-down"></i></a>
             
           </li>
           {% endif %}
 
           <li class="dropdown"><a href="#"><span>Coupons</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{% url 'resources' %}">All Coupons</a></li>
-              <li><a href="{% url 'resources_add' %}">My Coupons</a></li>
+              <li><a href="{% url 'available' %}">All Coupons</a></li>
+              <li><a href="{% url 'purchased' %}">My Coupons</a></li>
               {% if user.is_company %}
-              <li><a href="{% url 'resources_add' %}">Company Dashboard</a></li>
+              <li><a href="{% url 'issued' %}">Company Dashboard</a></li>
               {% endif %}
             </ul>
           </li>
@@ -95,10 +95,11 @@
                   <li><a href="{%url 'tregister'%}">As a Professor</a></li>
                 </ul>
             </li>
-            <li><a  href="{%url 'login'%}">Login</a></li>
+            <li ><a  href="{%url 'login'%}">Login</a></li>
             {% else %}
-            <li><a>Hi {{user.username}}</a></a>
+            <li class="dropdown"><a>Hi {{user.name}}</a></a>
               <ul>
+                <li><a href="#">{{user.Coins}}</a></li>
                 <li><a href="{%url 'logout'%}">Logout</a></li>
               </ul>
             </li>
