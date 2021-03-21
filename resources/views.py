@@ -3,6 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import *
 from .forms import *
+import datetime
+from background_task import background
+from datetime import datetime
+
+
+
+
 
 # Create your views here.
 
@@ -10,8 +17,8 @@ from .forms import *
 def all_subs(request):
 	resources = Resource.objects.filter(resource_by=request.user)
 	reminders = Reminder.objects.filter(reminder_by=request.user)
-	# subjects = Subject.objects.filter(yr_branch=request.user.yr_branch)
-	subjects = Subject.objects.filter()
+	subjects = Subject.objects.filter(yr_branch=request.user.yr_branch)
+	# subjects = Subject.objects.filter()
 	context = {
 		'resources' : resources,
 		'reminders'	: reminders,
@@ -67,7 +74,7 @@ def delete_reminder(request, pk):
 def subject_page(request, id):
 	subject = Subject.objects.get(id=id)
 	resources = Resource.objects.filter(resource_by=request.user, Subject=subject)
-	reminders = Reminder.objects.filter(resource_by=request.user, Subject=subject)
+	reminders = Reminder.objects.filter(reminder_by=request.user, Subject=subject)
 
 	context = {
 		'resources' : resources,
@@ -75,3 +82,35 @@ def subject_page(request, id):
 		'subject' : subject,
 	}
 	return render(request, 'resources/subject_page.html', context)
+
+
+def timepage(request):
+	if request.user.is_superuser:
+		return render(request, 'home/save.html')
+	else:
+		return redirect('comingsoon')
+
+
+def time(request):
+	if request.user.is_superuser:
+		reminders = Reminder.objects.all()
+		now = datetime.now()
+		time = datetime(2020, 5, 17, 10,00,00)
+		if (now.time() == time.time()):
+			for reminder in reminders:
+				send_mail(
+							'REMINDER!!!', 
+							f"""
+Dear {reminder.reminder_by.name},
+
+Your { reminder.title } of { reminder.Subject } is due at { reminder.due_at }
+
+Regards, 
+Team EDC
+							""", 
+							'pitchers@edctiet.com',
+							[reminder.reminder_by.email],
+					)
+		return redirect('')
+	else:
+		return redirect('')
