@@ -24,16 +24,15 @@ def create_slot(request):
 
 def all_slots(request, pk=None, id=None):
 
-	slots = Slot.objects.all()
+	slots = Slot.objects.exclude(time=None)
 	if id:
 		slot = Slot.objects.get(id=pk)
 		time_slot = Time.objects.get(id=id)
-		timeName = time_slot.time
-		print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-		print(timeName)
-		print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 		obj = booked.objects.create(student=request.user, teacher=slot.teacher, time=time_slot, date=slot.date, description='')
 		obj.save()
+
+		slot.time.remove(time_slot)
+
 	context = {
 		'slots' : slots,
 	}
