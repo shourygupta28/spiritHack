@@ -15,7 +15,7 @@
 			{% for time in slot.time.all %}
 
 
-			<li>{{ time.time }} <a href="{% url 'slots-book' slot.id time.id %}"> BOOK </a>
+			<li><a href="{% url 'slots-book' slot.id time.id %}"> {{ time.time }} </a>
 			</li>
 
 			{% endfor %}

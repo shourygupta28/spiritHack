@@ -74,7 +74,7 @@
               </div> -->
 
               <h2 class="entry-title">
-                <a href="blog-single.html">{{ internship.startup }}</a>
+                <a href="#">{{ internship.startup }}</a>
               </h2>
 
               <div class="entry-meta">
@@ -92,6 +92,7 @@
                 </p>
                 <div class="read-more">
                   <a href="{{ internship.link }}" target="_blank">Link</a>
+                  <a href="{% url 'accept' internship.id %}">Make Visible</a>
                 </div>
               </div>
 
