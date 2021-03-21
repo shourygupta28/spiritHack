@@ -40,7 +40,7 @@ def InternshipCreateView(request):
                 messages.success(
                     request, 'Done!')
 
-        return redirect('project-internships')
+        return redirect('internship-opportunities')
 
     else:
         if request.user.is_student:
