@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+		{% for coupon in coupons %}
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-store"></i></div>
+              <h4 class="title"><a href="">{{ coupon.company.name }}</a></h4>
+              <p class="description">{{ coupon.description }}</p>
+              <p class="description">{{ coupon.cost }}</p>
+              <p class="description" style="border-style: solid; border-width: thin; margin-top: 25px;"><a class="description" href = "{% url 'available' coupon.id %}">Buy</a></p>
+            </div>
+          </div>
+        {% endfor %}
+</body>
+</html>
