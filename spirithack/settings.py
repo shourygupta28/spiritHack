@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'djcelery',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -136,3 +137,13 @@ LOGOUT_REDIRECT_URL = 'login'
 LOGIN_REDIRECT_URL = 'project-internships'
 
 AUTH_USER_MODEL = "user.User"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'queries.edctiet@gmail.com'
+EMAIL_HOST_PASSWORD = 'eczqtysruacoqqob'
+DEFAULT_FROM_EMAIL = 'pitchers@edctiet.com'
+
