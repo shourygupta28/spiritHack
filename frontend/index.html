@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sailor Bootstrap Template - Index</title>
+  <title>Student Portal - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,6 +26,10 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+    <link rel="stylesheet" href="assets/css/style3.css">
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -42,7 +46,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Sailor</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">Student Portal</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -50,11 +54,11 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
 
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="about.html">Internships</a></li>
+              <li><a href="team.html">Academics</a></li>
+              <li><a href="testimonials.html">Finances</a></li>
 
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
@@ -67,14 +71,18 @@
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="internships.html">Internships</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="blog.html">Blog</a></li>
 
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="index.html" class="getstarted">Get Started</a></li>
-        </ul>
+
+            <li class="dropdown"><a href="#" class="getstarted">Login</a></a>
+                <ul>
+                  <li><a href="registerstudent.html">As a Student</a></li>
+                  <li><a href="registerteacher.html">As a Teacher</a></li>
+                  <li><a href="registercompany.html">As Company</a></li>
+                </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -85,7 +93,11 @@
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+      <a href="#about-section" class="mouse smoothscroll">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+      </a>
 
       <div class="carousel-inner" role="listbox">
 
@@ -93,15 +105,15 @@
         <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Sailor</span></h2>
+              <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Student Portal</span></h2>
               <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Explore</a>
             </div>
           </div>
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
+        <!--<div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
@@ -109,10 +121,10 @@
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+        <!--<div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
@@ -120,17 +132,17 @@
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
             </div>
           </div>
-        </div>
+        </div>-->
 
       </div>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+     <!-- <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
       </a>
 
       <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
+      </a>-->
 
     </div>
   </section><!-- End Hero -->
@@ -143,10 +155,10 @@
 
         <div class="row content">
           <div class="col-lg-6">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
+            <h2>Our Top Recruiters</h2>
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
+          <!--<div class="col-lg-6 pt-4 pt-lg-0">
             <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
@@ -161,7 +173,7 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
             </p>
-          </div>
+          </div>-->
         </div>
 
       </div>
@@ -174,27 +186,27 @@
         <div class="row">
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/google.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/amazon.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/microsoft.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/deloitte.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/jpmc.png" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/tcs.png" class="img-fluid" alt="">
           </div>
 
         </div>
@@ -203,7 +215,73 @@
     </section><!-- End Clients Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section class="site-section border-bottom bg-light" id="services-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center" data-aos="fade">
+            <h2 class="section-title mb-3" style="color: #000; margin-bottom: 1px solid #000;">Students Paradise</h2>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            <div class="unit-4">
+              <div class="unit-4-icon mr-4 text-center" style="margin-bottom:6px;"><img src="assets/img/code.png"></div>
+              <div class="text-center" style="color: rgb(78, 68, 68);">
+                <h3 style="color: #000; font-weight: bold;">Skill Development</h3>
+                <p>Regular workshops and constant collaboration help our students to become better programmers</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="unit-4">
+              <div class="unit-4-icon mr-4 text-center" style="margin-bottom:6px;"><img src="assets/img/office-worker.png"></div>
+              <div class="text-center" style="color: rgb(78, 68, 68);">
+                <h3 style="color: #000; font-weight: bold;">Project Opportunities</h3>
+                <p>Owasp members get the opportunity to work on multiple projects both individually and in teams. This also helps in developing great projects and make you industry ready. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="unit-4">
+              <div class="unit-4-icon mr-4 text-center" style="margin-bottom:6px;"><img src="assets/img/meeting.png"></div>
+              <div class="text-center" style="color: rgb(78, 68, 68);">
+                <h3 style="color: #000; font-weight: bold;">Regular Meetings</h3>
+                <p>Owasp organizes simple and fun meeting sessions for students can address their problems and also gain recreation</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="unit-4">
+              <div class="unit-4-icon mr-4 text-center" style="margin-bottom:6px;"><img src="assets/img/graphic-design.png"></div>
+              <div class="text-center" style="color: rgb(78, 68, 68);">
+                <h3 style="color: #000; font-weight: bold;">Designing Opportunities</h3>
+                <p>Owasp provides various opportunities in non-tech activities to up their game by designing posters, flexes, videos, etc for the society and make us better corporate proffesionals. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="unit-4">
+              <div class="unit-4-icon mr-4 text-center" style="margin-bottom:6px;"><img src="assets/img/politician.png"></div>
+              <div class="text-center" style="color: rgb(78, 68, 68);">
+                <h3 style="color: #000; font-weight: bold;">Proffesional Development</h3>
+                <p>TeamWork ,Leadership these qualities don't build up by sitting in a room working on your computers, Owasp provides great exposure to meet new people in tech space and expand your horizons</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
+            <div class="unit-4">
+              <div class="unit-4-icon mr-4 text-center" style="margin-bottom:6px;"><img src="assets/img/share.png"></div>
+              <div class="text-center" style="color: rgb(78, 68, 68);">
+                <h3 style="color: #000; font-weight: bold;">Strong Alumni Network</h3>
+                <p>Owasp has a very strong network of its alumni who constantly guide the members of the society and share their experiences. </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--<section id="services" class="services">
       <div class="container">
 
         <div class="row">
@@ -249,7 +327,7 @@
               <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
             </div>
           </div>
-        </div>
+        </div>-->
 
       </div>
     </section><!-- End Services Section -->
@@ -262,9 +340,9 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">CSE/COE</li>
+              <li data-filter=".filter-card">ECE/ENC</li>
+              <li data-filter=".filter-web">MEE</li>
             </ul>
           </div>
         </div>

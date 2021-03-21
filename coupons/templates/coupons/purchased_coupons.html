@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+        {% for coupon in coupons %}
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-store"></i></div>
+              <h4 class="title"><a href="">{{ coupon.coupon.company.name }}</a></h4>
+              <p class="description">{{ coupon.unique_code }}</p>
+              <p class="description">{{ coupon.coupon.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+</body>
+</html>

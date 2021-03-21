@@ -6,15 +6,15 @@ class ProjectInternshipForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = [
-            'field_of_internship',
+            'field_of_project',
             'duration',
             'about',
             'location',
             'stipend',
             'skills_required',
-            'no_of_internships',
+            'no_of_vaccancy',
             'perks',
-            'who_should_apply',
+            'project',
             'apply_by',
         ]
 
@@ -36,4 +36,5 @@ class ApplicationForm(forms.ModelForm):
             'message',
             'resume',
         ]
+
 
