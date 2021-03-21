@@ -1,4 +1,4 @@
-{% for internship in internships %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,6 +66,7 @@
       </nav><!-- .navbar -->
 
     </div>
+    {% for internship in internships %
   </header><!-- End Header -->
     <main id="main">
      <section id="blog" class="blog" style="align-self: center;margin-left: 350px;margin-top: 65px;">
@@ -84,7 +85,7 @@
               <h2 class="entry-title">
                 <a href="blog-single.html">Internship Name</a>
               </h2>
-
+              }
               <div class="entry-meta">
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Company Name {{internship.startup}}</a></li>
@@ -314,8 +315,7 @@
         <h1>{{internship.startup}}</h1>
         <h4>Duration: {{internship.duration}}</h4>
         <h4>Stipend: {{internship.stipend}}</h4>
-        <a href="{% url 'accept' internship.id %}">Accept</a>
-    {% endfor %}-->
+        <a href="{% url 'accept' internship.id %}">Accept</a>-->
+    {% endfor %}
 </body>
-
 </html>
