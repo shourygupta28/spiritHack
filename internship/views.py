@@ -81,6 +81,10 @@ def check_internship(request):
         }
         return render(request, 'internship/CheckInternshipVisibility.html', context)
     else:
+        internships = StudentInternship.objects.filter(visibility = True)
+        context = {
+            'internships': internships
+        }
         return render(request, 'internship/ProjectInternship.html', context)
 
 def accept(request, pk):
