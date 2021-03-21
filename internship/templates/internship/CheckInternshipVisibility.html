@@ -1,80 +1,71 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block head %}
+<meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<!DOCTYPE html>
-<html lang="en">
+  <title>Blog - Sailor Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Visibility</title>
-    <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="{% static 'home/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'home/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'home/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-</head>
+  <link href="{% static 'home/assets/css/style.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block body %}
 
-<body>
-      <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Student Portal</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+    <a href="#about-section" class="mouse smoothscroll">
+      <span class="mouse-icon">
+        <span class="mouse-wheel"></span>
+      </span>
+    </a>
 
-          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="blog.html">Internships</a></li>
-              <li><a href="team.html">Academics</a></li>
-              <li><a href="testimonials.html">Finances</a></li>
+    <div class="carousel-inner" role="listbox">
 
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="blog.html">Internships</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-
-          <li><a href="contact.html">Contact</a></li>
-
-            <li class="dropdown"><a href="#" class="getstarted">Login</a></a>
-                <ul>
-                  <li><a href="registerstudent.html">As a Student</a></li>
-                  <li><a href="registerteacher.html">As a Teacher</a></li>
-                  <li><a href="registercompany.html">As Company</a></li>
-                </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      <div class="carousel-item active" style="background-image: url(https://www.stoodnt.com/blog/wp-content/uploads/2020/02/1_t8sE0zYy7a3csAtqCeYULg.jpeg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate_animated animate_fadeInDown"><span>Internship Portal</span></h2>
+  
+          </div>
+        </div>
+      </div>
 
     </div>
-    {% for internship in internships %
-  </header><!-- End Header -->
-    <main id="main">
-     <section id="blog" class="blog" style="align-self: center;margin-left: 350px;margin-top: 65px;">
+
+
+  </div>
+</section><!-- End Hero -->
+  
+  <main id="main">
+
+    
+    <section id="blog" class="blog" style="align-self: center;margin-left: 350px;">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
 
           <div class="col-lg-8 entries">
+          {% for internship in internships %}
 
             <article class="entry">
 
@@ -83,227 +74,34 @@
               </div> -->
 
               <h2 class="entry-title">
-                <a href="blog-single.html">Internship Name</a>
-              </h2>
-              }
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Company Name {{internship.startup}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html">Duration: {{internship.duration}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-geo-alt"></i> <a href="blog-single.html"></a>TIET-Patiala</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-cash"></i> <a href="blog-single.html"></a>Stipend: {{internship.stipend}}</li>
-                </ul>
-              </div>
-              <!--{% for internship in internships %}
-        <h1>{{internship.startup}}</h1>
-        <h4>Duration: {{internship.duration}}</h4>
-        <h4>Stipend: {{internship.stipend}}</h4>
-        <a href="">Accept</a>
-    {% endfor %}-->
-                <div class="entry-content">
-                <p>
-                 Desc
-                </p>
-                <div class="read-more">
-                  <a href="{% url 'accept' internship.id %}">Accept</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
-
-            <article class="entry">
-
-              <!-- <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div> -->
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Internship Name</a>
+                <a href="blog-single.html">{{ internship.startup }}</a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Company Name {{internship.startup}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html">Duration: {{internship.duration}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-geo-alt"></i> <a href="blog-single.html"></a>TIET-Patiala</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-cash"></i> <a href="blog-single.html"></a>Stipend: {{internship.stipend}}</li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{ internship.startup }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#">Duration: {{ internship.duration }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#">Last Date: {{ internship.apply_by }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-cash"></i> <a href="#">$ {{ internship.stipend }}</a></li>
                 </ul>
               </div>
-              <!--{% for internship in internships %}
-        <h1>{{internship.startup}}</h1>
-        <h4>Duration: {{internship.duration}}</h4>
-        <h4>Stipend: {{internship.stipend}}</h4>
-        <a href="">Accept</a>
-    {% endfor %}-->
-                <div class="entry-content">
+
+              <div class="entry-content">
                 <p>
-                 Desc
+                  description
                 </p>
                 <div class="read-more">
-                  <a href="{% url 'accept' internship.id %}">Accept</a>
+                  <a href="{{ internship.link }}" target="_blank">Link</a>
                 </div>
               </div>
 
             </article><!-- End blog entry -->
+          {% endfor %}
 
-            <article class="entry">
-
-              <!-- <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div> -->
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Internship Name</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Company Name {{internship.startup}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html">Duration: {{internship.duration}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-geo-alt"></i> <a href="blog-single.html"></a>TIET-Patiala</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-cash"></i> <a href="blog-single.html"></a>Stipend: {{internship.stipend}}</li>
-                </ul>
-              </div>
-              <!--{% for internship in internships %}
-        <h1>{{internship.startup}}</h1>
-        <h4>Duration: {{internship.duration}}</h4>
-        <h4>Stipend: {{internship.stipend}}</h4>
-        <a href="">Accept</a>
-    {% endfor %}-->
-                <div class="entry-content">
-                <p>
-                 Desc
-                </p>
-                <div class="read-more">
-                  <a href="{% url 'accept' internship.id %}">Accept</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
-
-           <article class="entry">
-
-              <!-- <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div> -->
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Internship Name</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Company Name {{internship.startup}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html">Duration: {{internship.duration}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-geo-alt"></i> <a href="blog-single.html"></a>TIET-Patiala</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-cash"></i> <a href="blog-single.html"></a>Stipend: {{internship.stipend}}</li>
-                </ul>
-              </div>
-              <!--{% for internship in internships %}
-        <h1>{{internship.startup}}</h1>
-        <h4>Duration: {{internship.duration}}</h4>
-        <h4>Stipend: {{internship.stipend}}</h4>
-        <a href="">Accept</a>
-    {% endfor %}-->
-                <div class="entry-content">
-                <p>
-                 Desc
-                </p>
-                <div class="read-more">
-                  <a href="{% url 'accept' internship.id %}">Accept</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
-
-            <div class="blog-pagination">
-              <ul class="justify-content-center">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-              </ul>
-            </div>
+            
+    
 
           </div><!-- End blog entries list -->
-
-           <!--<div class="col-lg-4">
-
-            <div class="sidebar">
-
-              <h3 class="sidebar-title">Search</h3>
-              <div class="sidebar-item search-form">
-                <form action="">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div>
-
-               <h3 class="sidebar-title">Categories</h3>
-              <div class="sidebar-item categories">
-                <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-              </div>-->
-
-              <!-- <h3 class="sidebar-title">Recent Posts</h3>
-              <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-1.jpg" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-2.jpg" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-3.jpg" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-4.jpg" alt="">
-                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/blog/blog-recent-5.jpg" alt="">
-                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-              </div>End sidebar recent posts -->
-
-              <!--<h3 class="sidebar-title">Tags</h3>
-              <div class="sidebar-item tags">
-                <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
-                </ul>
-              </div>-->
-
-            <!-- </div>End sidebar -->
-
-          <!-- </div>End blog sidebar -->
 
         </div>
 
@@ -311,11 +109,6 @@
     </section><!-- End Blog Section -->
 
   </main><!-- End #main -->
-    <!-- {% for internship in internships %}
-        <h1>{{internship.startup}}</h1>
-        <h4>Duration: {{internship.duration}}</h4>
-        <h4>Stipend: {{internship.stipend}}</h4>
-        <a href="{% url 'accept' internship.id %}">Accept</a>-->
-    {% endfor %}
-</body>
-</html>
+
+  <!-- ======= Footer ======= -->
+{% endblock body %}
