@@ -134,7 +134,7 @@ STATIC_URL = '/static/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
-LOGIN_REDIRECT_URL = 'project-internships'
+LOGIN_REDIRECT_URL = ''
 
 AUTH_USER_MODEL = "user.User"
 
